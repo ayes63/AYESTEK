@@ -187,8 +187,14 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.style.pointerEvents = 'none';
       submitBtn.style.opacity = '0.7';
 
-      // Simulate API submit delay
-      setTimeout(() => {
+      // Send form data to Netlify Forms via AJAX
+      const formData = new FormData(contactForm);
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(() => {
         submitBtn.innerHTML = `Başarıyla Gönderildi! ✓`;
         submitBtn.style.background = 'linear-gradient(135deg, #00ff64, #00b050)';
         submitBtn.style.boxShadow = '0 8px 24px rgba(0, 255, 100, 0.3)';
@@ -204,8 +210,21 @@ document.addEventListener('DOMContentLoaded', () => {
           submitBtn.style.pointerEvents = 'auto';
           submitBtn.style.opacity = '1';
         }, 3000);
-
-      }, 1500);
+      })
+      .catch((error) => {
+        console.error("Form submission error:", error);
+        submitBtn.innerHTML = `Hata Oluştu! ✗`;
+        submitBtn.style.background = 'linear-gradient(135deg, #ff4e50, #f9d423)';
+        submitBtn.style.boxShadow = '0 8px 24px rgba(255, 78, 80, 0.3)';
+        
+        setTimeout(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.style.background = '';
+          submitBtn.style.boxShadow = '';
+          submitBtn.style.pointerEvents = 'auto';
+          submitBtn.style.opacity = '1';
+        }, 3000);
+      });
     });
   }
 
