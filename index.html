@@ -21,6 +21,11 @@
   <link rel="shortcut icon" href="favicon.svg">
   <meta name="theme-color" content="#0d0a1a">
 
+  <!-- Google Fonts Preconnect & Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <!-- CSS Bağlantısı -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -337,7 +342,7 @@
       <!-- Proje 1 (Yazılım) -->
       <div class="project-card glass-panel reveal" data-category="software">
         <div class="project-img-wrapper">
-          <img src="images/cctv_dashboard.png" alt="Kamera Takip Dashboard'u" class="project-img">
+          <img src="images/cctv_dashboard.webp" alt="Kamera Takip Dashboard'u" class="project-img" loading="lazy">
           <div class="project-overlay">
             <a href="#" class="project-link-btn" aria-label="Detayları gör">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -363,7 +368,7 @@
       <!-- Proje 2 (Tasarım) -->
       <div class="project-card glass-panel reveal" data-category="design">
         <div class="project-img-wrapper">
-          <img src="images/smarthome_app.png" alt="SmartHome Mobil Arayüzü" class="project-img">
+          <img src="images/smarthome_app.webp" alt="SmartHome Mobil Arayüzü" class="project-img" loading="lazy">
           <div class="project-overlay">
             <a href="#" class="project-link-btn" aria-label="Detayları gör">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -389,7 +394,7 @@
       <!-- Proje 3 (Entegrasyon) -->
       <div class="project-card glass-panel reveal" data-category="integration">
         <div class="project-img-wrapper">
-          <img src="images/network_setup.png" alt="Endüstriyel Kamera & Ağ Kurulumu" class="project-img">
+          <img src="images/network_setup.webp" alt="Endüstriyel Kamera & Ağ Kurulumu" class="project-img" loading="lazy">
           <div class="project-overlay">
             <a href="#" class="project-link-btn" aria-label="Detayları gör">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -545,6 +550,6 @@
   </footer>
 
   <!-- JS Bağlantısı -->
-  <script src="app.js"></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
